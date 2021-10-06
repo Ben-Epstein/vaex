@@ -1276,6 +1276,7 @@ class DataFrame(object):
             expressions = x
         else:
             expressions = [x, y]
+        expressions = _ensure_strings_from_expressions(expressions)
         N = len(expressions)
         binby = _ensure_list(binby)
         shape = _expand_shape(shape, len(binby))
